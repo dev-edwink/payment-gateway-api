@@ -24,7 +24,7 @@ router.post('/payments', async (req, res, next) => {
     const paymentId = uuidv4();
     const customerName = `${first_name} ${last_name}`;
 
-    // Paystack expects snake_case in metadata, that's fine
+    // Initialize Paystack transaction
     const transaction = await Paystack.transaction.initialize({
       email,
       amount: amount * 100, // Paystack uses kobo
@@ -40,7 +40,7 @@ router.post('/payments', async (req, res, next) => {
       });
     }
 
-    // Save to MongoDB - use camelCase for schema fields
+    // Save to MongoDB 
     const payment = new Payment({
       paymentId,
       customerName,

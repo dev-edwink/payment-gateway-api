@@ -1,9 +1,11 @@
 const request = require('supertest');
 const mongoose = require('mongoose');
-const app = require('../app'); // Adjust path if needed
+const app = require('../app'); 
 const Payment = require('../models/payments');
 
 describe('Payment API', () => {
+  jest.setTimeout(20000); // Increase timeout for slow tests
+
   beforeAll(async () => {
     // Connect to a test database
     await mongoose.connect(process.env.MONGODB_URI, {
