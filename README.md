@@ -40,7 +40,7 @@ The backend is built using Express.js (Node.js) and integrates with the Paystack
 
 1. **Clone the repository:**
    ```sh
-   git clone https://github.com/your-username/payment-gateway-api.git
+   git clone https://github.com/dev-edwink/payment-gateway-api.git
    cd payment-gateway-api
    ```
 
